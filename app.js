@@ -4,7 +4,7 @@ const express = require('express');
 const request = require('request');
 const bodyParser = require('body-parser');
 const https = require('https');
-const port = 3000 || process.env.PORT;
+
 const app = express();
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
@@ -70,20 +70,7 @@ app.post("/failure", (req, res) =>
 
 
 
-app.listen(port, () =>
+app.listen(process.env.PORT || 3000, () =>
 {
-  console.log("The server is running on port " + port)
+  console.log("The server is running")
 })
-
-//742ca31bfd7d26aabf5c155fa62f3d22-us18
-
-//list id
-//0c06ac6df0
-
-
-
-//api key
-//8f7fb0ac1402292758b7736faf7d5b6d-us10
-
-//list idea
-//6c49911a42
